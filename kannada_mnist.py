@@ -80,6 +80,14 @@ def train_and_evaluate(models, X_train_pca, X_test_pca, Y_train, Y_test, n_compo
             "ROC-AUC": roc_auc
         })
 
+        # Plot confusion matrix
+        plt.figure(figsize=(6, 4))
+        sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues")
+        plt.title(f"Confusion Matrix for {name}")
+        plt.xlabel("Predicted")
+        plt.ylabel("Actual")
+        plt.show()
+
     return results
 
 
